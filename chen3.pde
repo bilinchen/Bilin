@@ -1,8 +1,15 @@
  
 //This is a interactive work: my last name
-float r = 0;
-float g = 180;
-float b = 0;
+
+float r;
+float g;
+float b;
+float alpha;
+
+float diam;
+float x;
+float y;
+
 //setup a background
 void setup(){
   size(1080,720);
@@ -25,13 +32,18 @@ if(g > 255) {
   }
 }
 
-void mousePressed(){
-    //circle
+ void mousePressed(){
+  r = random(255);
+  g = random(255);
+  b = random(255);
+  alpha = random(255);
+  diam = random(500);
+  x = random(width);
+  y = random(height);
   noStroke();
-  fill(255,180,200,127);
-  ellipse(mouseX,mouseY,1080,720);
+  fill(r,g,b,alpha);
+  ellipse(mouseX,mouseY,diam,diam);
 }
-
 
 void draw(){
   
@@ -89,6 +101,7 @@ strokeWeight(5);
 line(780,60,880,340);
 
 }
+
 void keyPressed(){
   background(150,230,45);
 }
